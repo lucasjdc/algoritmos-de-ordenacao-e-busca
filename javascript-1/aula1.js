@@ -1,13 +1,11 @@
-var livros = [
-	{nome: "C", preco: 19.99},
-	{nome: "PHP", preco: 15.25},
-	{nome: "Java", preco: 30.75},
-	{nome: "JavaScript", preco: 25.89},
-	{nome: "C#", preco: 32.05}
-	];
-	
-livros.sort(function(a, b) {
-	return a.preco - b.preco	
-});
+const precosLivros = [25, 15, 30, 50, 45, 20];
 
-console.log(livros);
+let maisBarato = 0;
+
+for (let atual = 0; atual < precosLivros.length; atual++){
+	if (precosLivros[atual] < precosLivros[maisBarato]) {
+		maisBarato = atual;
+	}
+}
+
+console.log(`O livro mais barato custa ${precosLivros[maisBarato]}`);
